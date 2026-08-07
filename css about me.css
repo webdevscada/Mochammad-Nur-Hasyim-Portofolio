@@ -1,0 +1,313 @@
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+background:#f5f7fb;
+
+}
+
+/* ====================== */
+
+header{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+z-index:1000;
+
+}
+
+.navbar{
+
+height:80px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 70px;
+
+background:#132b50;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.logo img{
+
+width:42px;
+
+}
+
+.logo span{
+
+font-size:20px;
+
+font-weight:600;
+
+color:white;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:40px;
+
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+position:relative;
+
+padding-bottom:8px;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:0;
+
+transform:translateX(-50%);
+
+width:0;
+
+height:3px;
+
+background:#2f86ff;
+
+transition:.3s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+nav a.active::after{
+
+width:100%;
+
+}
+
+/* ====================== */
+
+.about{
+
+padding:130px 80px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+.about-left,
+
+.about-right{
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.small-title{
+
+color:#2563eb;
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+
+.about h1{
+
+margin:10px 0 20px;
+
+font-size:38px;
+
+color:#222;
+
+}
+
+.about p{
+
+line-height:30px;
+
+color:#555;
+
+}
+
+/* CARD */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.card{
+
+border:1px solid #e5e5e5;
+
+border-radius:12px;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+.card i{
+
+font-size:28px;
+
+color:#2563eb;
+
+margin-bottom:15px;
+
+}
+
+.card h2{
+
+color:#2563eb;
+
+}
+
+/* TIMELINE */
+
+.timeline{
+
+margin-top:30px;
+
+border-left:3px solid #2563eb;
+
+padding-left:30px;
+
+}
+
+.item{
+
+position:relative;
+
+margin-bottom:35px;
+
+}
+
+.circle{
+
+position:absolute;
+
+left:-38px;
+
+top:5px;
+
+width:12px;
+
+height:12px;
+
+border-radius:50%;
+
+background:#2563eb;
+
+}
+
+.year{
+
+font-weight:600;
+
+margin-bottom:10px;
+
+color:#444;
+
+}
+
+.text b{
+
+display:block;
+
+margin-bottom:5px;
+
+color:#222;
+
+}
+
+.text p{
+
+line-height:24px;
+
+}
+
+.card-link{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    display:block;
+
+}
+
+.card-link:hover .card{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
+
+}

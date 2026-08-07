@@ -1,0 +1,729 @@
+/* ===========================================
+            RESET
+=========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#f5f7fb;
+
+    color:#222;
+
+}
+
+/* ===========================================
+            HEADER
+=========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+}
+
+.navbar{
+
+    width:100%;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 70px;
+
+    background:rgba(7,23,50,.95);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+/* ===========================================
+            LOGO
+=========================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.logo img{
+
+    width:44px;
+
+}
+
+.logo span{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+/* ===========================================
+            NAVBAR
+=========================================== */
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:40px;
+
+}
+
+nav ul li{
+
+    list-style:none;
+
+}
+
+nav ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:#4aa7ff;
+
+}
+
+nav ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    transform:translateX(-50%);
+
+    width:0;
+
+    height:3px;
+
+    background:#2f86ff;
+
+    border-radius:30px;
+
+    transition:.35s;
+
+}
+
+nav ul li a:hover::after{
+
+    width:100%;
+
+}
+
+nav ul li a.active::after{
+
+    width:100%;
+
+}
+
+/* ===========================================
+            SECTION
+=========================================== */
+
+.skill-section{
+
+    padding:130px 80px 80px;
+
+}
+
+.skill-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+}
+
+/* ===========================================
+            TITLE
+=========================================== */
+
+.small-title{
+
+    color:#2f86ff;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.skill-container h2{
+
+    font-size:42px;
+
+    margin:8px 0 35px;
+
+}
+
+/* ===========================================
+            HARD SKILL
+=========================================== */
+
+.hard-skill{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.hard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:18px;
+
+margin-top:30px;
+
+}
+
+.hard-card{
+
+background:white;
+
+border:1px solid #edf1f7;
+
+border-radius:14px;
+
+height:120px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.hard-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#2f86ff;
+
+box-shadow:0 15px 30px rgba(47,134,255,.18);
+
+}
+
+.hard-card img{
+
+width:52px;
+
+height:52px;
+
+object-fit:contain;
+
+margin-bottom:12px;
+
+}
+
+.hard-card p{
+
+font-size:14px;
+
+font-weight:600;
+
+text-align:center;
+
+line-height:20px;
+
+color:#444;
+
+}
+
+@media(max-width:1200px){
+
+.hard-grid{
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hard-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:500px){
+
+.hard-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+.hard-card{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+.hard-card.show{
+
+animation:fadeUp .7s forwards;
+
+}
+
+/* ===========================================
+            BAR
+=========================================== */
+
+.skill{
+
+    display:grid;
+
+    grid-template-columns:110px 1fr 45px;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:20px;
+
+}
+
+.skill span:first-child{
+
+    font-weight:600;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:#e7edf7;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#2f86ff,#0067ff);
+
+    border-radius:30px;
+
+    transition:1.5s ease;
+
+}
+
+.percent{
+
+    text-align:right;
+
+    font-weight:600;
+
+}
+
+/* ===========================================
+            SOFT SKILL
+=========================================== */
+
+.soft-skill{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/* ===========================================
+            GRID
+=========================================== */
+
+.soft-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:18px;
+
+}
+
+/* ===========================================
+            CARD
+=========================================== */
+
+.soft-card{
+
+    background:white;
+
+    border:1px solid #edf1f7;
+
+    border-radius:14px;
+
+    height:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+/* Hover */
+
+.soft-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(47,134,255,.18);
+
+    border-color:#2f86ff;
+
+}
+
+/* Icon */
+
+.soft-card i{
+
+    font-size:28px;
+
+    color:#2f86ff;
+
+    margin-bottom:14px;
+
+    transition:.35s;
+
+}
+
+/* Hover Icon */
+
+.soft-card:hover i{
+
+    transform:scale(1.15);
+
+}
+
+/* Text */
+
+.soft-card p{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    color:#444;
+
+    line-height:22px;
+
+}
+
+/* ===========================================
+            ANIMATION
+=========================================== */
+
+.soft-card.show{
+
+    animation:fadeUp .7s forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================================
+        HARD SKILL ANIMATION
+=========================================== */
+
+.hard-skill{
+
+    opacity:0;
+
+    transform:translateX(-50px);
+
+    animation:slideLeft .8s forwards;
+
+}
+
+@keyframes slideLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ===========================================
+        SOFT SKILL ANIMATION
+=========================================== */
+
+.soft-skill{
+
+    opacity:0;
+
+    transform:translateX(50px);
+
+    animation:slideRight .8s .3s forwards;
+
+}
+
+@keyframes slideRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ===========================================
+            RESPONSIVE
+=========================================== */
+
+@media(max-width:1200px){
+
+.soft-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+@media(max-width:992px){
+
+.skill-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.soft-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.skill{
+
+    grid-template-columns:100px 1fr 40px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+    padding:0 20px;
+
+}
+
+.logo span{
+
+    font-size:18px;
+
+}
+
+nav ul{
+
+    gap:18px;
+
+}
+
+nav ul li a{
+
+    font-size:15px;
+
+}
+
+.skill-section{
+
+    padding:120px 25px 40px;
+
+}
+
+.soft-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:500px){
+
+.soft-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.skill{
+
+    grid-template-columns:1fr;
+
+    gap:10px;
+
+}
+
+.percent{
+
+    text-align:left;
+
+}
+
+.skill-container h2{
+
+    font-size:34px;
+
+}
+
+}
